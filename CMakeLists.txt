@@ -15,7 +15,8 @@ message("${CMAKE_GLFW_PATH}")
 
 add_executable(bergie ${CXX_HEADERS} ${CXX_SOURCES})
 
-find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
 find_package(glfw3 REQUIRED)
+find_package(OpenGL REQUIRED)
 
-target_link_libraries(bergie PRIVATE glfw OpenGL::GL)
+target_link_libraries(bergie PRIVATE GLEW::glew glfw OpenGL::GL)
